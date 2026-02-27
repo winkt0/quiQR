@@ -36,7 +36,7 @@ export default function QRCodeComponent() {
             onClick={handleSubmit}
             className="w-full rounded-xl text-base"
           >
-            Submit
+            Create QR Code
           </Button>
 
           {imageUrl && (
