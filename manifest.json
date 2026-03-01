@@ -16,5 +16,9 @@
     ],
     "icons": {
         "128": "images/qrcode.png"
+    },
+    "background": {
+        "service_worker": "background.js",
+        "type": "module"
     }
 }

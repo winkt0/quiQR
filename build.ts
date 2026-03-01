@@ -51,6 +51,7 @@ async function copyToDist(filename: string) {
 }
 copyToDist('manifest.json');
 copyToDist('images/qrcode.png');
+copyToDist('background.js');
 
 const end = performance.now();
 

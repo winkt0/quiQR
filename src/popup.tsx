@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import QRCode from "qrcode";
 
 export default function QRCodeComponent() {
-  const [inputValue, setInputValue] = useState<string>("");
+  let params = new URL(document.location.toString()).searchParams;
+  let textFromParams = params.get("text");
+  const [inputValue, setInputValue] = useState<string>(textFromParams ? textFromParams : "");
   const [imageUrl, setImageUrl] = useState<string | null>(null);
 
   const handleSubmit = () => {
@@ -17,6 +19,10 @@ export default function QRCodeComponent() {
         console.error(err)
       })
   };
+
+  useEffect(() => {
+    if (textFromParams) handleSubmit();
+  }, []); // called once after component has mounted
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 p-6">
