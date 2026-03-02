@@ -53,7 +53,7 @@ export default function QRCodeComponent() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.4 }}
-              className="w-full h-56 object-cover rounded-2xl shadow-md"
+              className="w-full h-full object-cover rounded-2xl shadow-md"
             />
           )}
         </CardContent>
